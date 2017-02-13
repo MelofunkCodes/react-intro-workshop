@@ -1,0 +1,33 @@
+sudo npm install -g create-react-app (enter in password)
+
+create-react-app react-intro-workshop  (create outside in "react-stuffs" folder)
+cd react-intro-workshop/
+npm start   (opens up a tab showing your browser test zone)
+
+have to call "npm start" each time you work in the current workspace and for testing
+
+
+
+
+NOTE
+1. The Pure Render Mixin (https://facebook.github.io/react/docs/pure-render-mixin.html), is the same as what Ziad did in class with the stateless constructors:
+
+class ImageWithText extends React.Component {
+    shouldComponentUpdate(nextProps){
+        if(nextProps.source === this.props.source){
+          return false;
+        }
+        else{
+          return true;
+        }
+    }
+    render(){
+        console.log('render was called');
+        return (
+          <div>
+            <img src = {this.props.source}/>
+            <p>{this.props.caption}</p>
+           </div>
+        );
+      }
+}
