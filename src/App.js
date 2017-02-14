@@ -3,6 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import ImageCaption from'./ImageCaption.js';
 import Layout from './Layout.js';
+import GuessTheNumber from './GuessTheNumber.js';
+import YouClicked from './YouClicked.js';
+import CharacterCounter from './CharacterCounter.js';
+import CharacterLimit from './CharacterLimit.js';
+import GuessTheNumber2 from './GuessTheNumber2.js';
 
 var imageList = [
   {id: 42, source: "http://placekitten.com/g/210/210", text: "Hello kittenz!"},
@@ -39,10 +44,32 @@ class App extends Component {
           <h2> About Us</h2>
           <p>We are <a href="https://facebook.github.io/react/">React</a> developers!</p>
         </Layout>
+        <hr/>
+
+        <h2>Number Guessing Game</h2>
+        <GuessTheNumber numberToGuess={49}/>
+        <hr/>
+
+        <h2>You Clicked</h2>
+        <YouClicked />
+        <hr/>
+
+        <h2>Character Counter</h2>
+        <CharacterCounter />
+        <hr/>
+
+        <h2>Character Limit</h2>
+        <CharacterLimit limit={140} />
+        <hr/>
+
+        <h2>Number Guessing Game ver 2</h2>
+        <GuessTheNumber2 numberToGuess={42} />
+
 
       </div>
     );
   }
 }
+
 
 export default App;
