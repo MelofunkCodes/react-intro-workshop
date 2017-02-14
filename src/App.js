@@ -8,6 +8,7 @@ import YouClicked from './YouClicked.js';
 import CharacterCounter from './CharacterCounter.js';
 import CharacterLimit from './CharacterLimit.js';
 import GuessTheNumber2 from './GuessTheNumber2.js';
+import GitHubProfile from './GitHubProfile.js';
 
 var imageList = [
   {id: 42, source: "http://placekitten.com/g/210/210", text: "Hello kittenz!"},
@@ -64,6 +65,10 @@ class App extends Component {
 
         <h2>Number Guessing Game ver 2</h2>
         <GuessTheNumber2 />
+        <hr/>
+
+        <h2>GitHubProfile</h2>
+        <GitHubProfile username={"gaearon"}/>
         <hr/>
 
 

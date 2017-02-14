@@ -1,0 +1,16 @@
+/*I had to wrap the image tag in another div box, so that the image wouldn't be distorted with flexbox*/
+.user {
+	display: flex;
+	padding: 10px;
+}
+
+.github-user_avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+
+.github-user_info {
+	text-align: left;
+    padding-left: 10px;
+}
