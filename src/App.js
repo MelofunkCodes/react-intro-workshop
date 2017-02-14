@@ -63,7 +63,8 @@ class App extends Component {
         <hr/>
 
         <h2>Number Guessing Game ver 2</h2>
-        <GuessTheNumber2 numberToGuess={42} />
+        <GuessTheNumber2 />
+        <hr/>
 
 
       </div>
