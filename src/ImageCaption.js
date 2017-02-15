@@ -9,11 +9,15 @@ class ImageCaption extends React.Component {
 		//mixin tells react not to re-render if nothing has changed
 	}
     render() {
+        // var {source, text} = this.props;
+        //since source and text does not change in this component can change var to const or "let"
+        const {source, text} = this.props;
+
         return ( 
         	<figure>
-        		<img src={this.props.source} alt="pic not loaded" />
+        		<img src={source} alt="pic not loaded" />
         		<figcaption>
-        			{this.props.text}
+        			{text}
         		</figcaption>
             </figure>
         );
@@ -21,3 +25,6 @@ class ImageCaption extends React.Component {
 }
 
 export default ImageCaption;
+
+
+
