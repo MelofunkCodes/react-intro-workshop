@@ -9,21 +9,32 @@ class GitHubProfile extends React.Component {
 		this.state = {};
 
 		this.componentDidMount = this.componentDidMount.bind(this);
+		//this.fetchData = this.fetchData.bind(this);
+	}
+
+	componentDidMount(){
+		this.fetchData();//calling it at initial instance
+	}
+
+	componentDidUpdate(prevProps){
+		if(prevProps.username !== this.props.username){ //if user entered different username, call fetchData again
+			this.fetchData();
+		}
 	}
 
 	//make AJAX call as soon as component mounted on the DOM
-	componentDidMount(){
+	fetchData(){
 		//var that = this;
 
 		fetch(`https://api.github.com/users/${this.props.username}`)
-				.then(response => response.json())
-				.then(function(data){
-					console.log("data: ", data, typeof data);
+		.then(response => response.json())
+		.then(function(data){
+			console.log("data: ", data, typeof data);
 
-					this.setState({
-						user: data
-					});
-				}.bind(this));
+			this.setState({
+				user: data
+			});
+		}.bind(this));
 
 
 	}
@@ -31,14 +42,14 @@ class GitHubProfile extends React.Component {
 	render(){
 		var {user} = this.state;
 
-		console.log("user:", this.state.user);
+		//console.log("user:", this.state.user);
 
 		return (
 			<div className="github-profile">
 				{user ? (
 					<div className="user">
 						<div className="avatar">
-							<img className="github-user_avatar" src={user.avatar_url}/>
+							<img className="github-user_avatar" src={user.avatar_url} alt={`avatar of ${user.login}`}/>
 						</div>
 					    <div className="github-user_info">
 						    <p>{user.login} ({user.name})</p>
